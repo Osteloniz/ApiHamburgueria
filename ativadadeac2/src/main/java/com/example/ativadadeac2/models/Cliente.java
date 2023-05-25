@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,5 +27,9 @@ public class Cliente {
     private String celular;
     @Column(nullable = false)
     private String email;
+    @OneToOne
+    @JoinColumn(name = "hamburguer_id")
+    private Hamburguer hamburguer;
+
     
 }
